@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family:'Geometria', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background: linear-gradient(#FFA1A1 , #FF7B7B );
+}
