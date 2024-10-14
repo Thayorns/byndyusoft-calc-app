@@ -3,9 +3,29 @@ html {
 }
 body {
     margin: 0;
-    font-family:'Geometria', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     background: linear-gradient(#FFA1A1 , #FF7B7B );
+}
+@font-face {
+    font-family: 'Geometria';
+    src: url('../../fonts/Geometria/Geometria-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geometria';
+    src: url('../../fonts/Geometria/Geometria.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geometria';
+    src: url('../../fonts/Geometria/Geometria.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+*{
+    font-family: 'Geometria', sans-serif;
 }

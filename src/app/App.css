@@ -1,15 +1,13 @@
 .App{
-  
-  width: var(--auto);
   max-width: 1440px;
-  height: var(--auto);
-  margin: 50px var(--auto);
-  
+  height: auto;
+  margin: 50px auto;
+  display: flex;
 }
 .calc-wrapper{
   width: 616px;
   height: auto;
-  margin: 0 var(--auto);
+  margin: 0 auto;
   padding: 38px 0;
   border-radius: var(--borderRadius);
   color: var(--white);
@@ -21,7 +19,7 @@
 .calc-inner{
   width: 554px;
   height: 800px;
-  margin: 0 var(--auto);
+  margin: 0 auto;
   border-radius: var(--borderRadius);
   background: linear-gradient(#28518E , #3a77d1);
   box-shadow: 
@@ -29,19 +27,99 @@
   0px 10.27px 19.78px 0px rgba(0, 0, 0, 0.175),
   0px 24.72px 47.63px 0px rgba(0, 0, 0, 0.2281),
   0px 82px 158px 0px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.line-break{
+  width: var(--width-90);
+  max-width: var(--width-460);
+  opacity: 55%;
+}
+.calc-buttons{
+  width: var(--width-90);
+  max-width: var(--width-460);
+  height: 464px;
+  /* border: #f5bb1b 1px dashed; */
+  margin-top: 35px;
+  margin-bottom: 45px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+button:last-child{
+  background-color: var(--white);
+  color: #28518E;
+}
+button:last-child:hover{
+  background-color: var(--white);
+}
+button{
+  margin: 0 auto;
+  width: var(--px-80);
+  height: var(--px-80);
+  border-radius: 50%;
+  border: none;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--white);
+  background-color: transparent;
+  cursor: pointer;
+}
+button:hover{
+  background: rgba(255, 255, 255, 0.12);
+}
+.multiplication-button{
+  display: inline-block;
+  transform: rotate(45deg);
+}
+.input-output{
+  height: 35%;
+  width: var(--width-90);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .user-input, .calc-output{
+    width: var(--width-100);
+    max-width: var(--width-460);
+  }
+  .user-input{
+    height: 117px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+  }
+  .calc-output{
+    height: 76px;
+    font-weight: 700;
+    font-size: 56px;
+    text-align: right;
+  }
+}
+
 @media screen and (max-width: 530px) {
   .App{
-    width: 100%;
+    width: var(--width-100);
     margin: 0;
   }
   .calc-wrapper{
-    width: 100%;
+    width: var(--width-100);
     padding: 0;
     border-radius: 0;
   }
   .calc-inner{
-    width: 100%;
+    width: var(--width-100);
     height: 100vh;
     border-radius: 0;
   }
