@@ -46,17 +46,42 @@ const App: React.FC = () => {
     };
   };
 
-  // function checks 'resultString' in order to find the errors & changes '*' -> 'x' 
+  // function checks 'resultString' in order to find the errors & changes '*' -> 'x'
+  const operatorArray = ['+', '-', '*', '/'];
+
   const checkResultString = () => {
-    return resultString.split('').map((el, index) => {
-      if(el === '*') return <span key={index} className='multiplication-button'>+</span>
-      return <span>{el}</span>
-    })
+    let maxOperand = 0;    // max = 15
+    let checkedString = '';
+    let wasOperator = false;
+    let wasOperand = false;
+    for(let i = 0; i < resultString.length; i++) {
+      const char = resultString[i];
+      if(operatorArray.includes(char)) {
+        if(!wasOperator && wasOperand){
+          checkedString += char;
+          wasOperator = true;
+        };
+          // second operator in a row is blocked 
+        
+      }else if(maxOperand !== 15){
+        checkedString += char;
+        maxOperand++;
+        wasOperator = false;
+        wasOperand = true;
+      };
+    };
+    const jsxElements = checkedString.split('').map((el, index) => {
+      if (el === '*') {
+        return <span key={index} className="multiplication-button">+</span>;
+      }
+      return <span key={index}>{el}</span>;
+    });
+    return jsxElements;
   };
 
+  // function that calculates an expression
   const calculateResultString = (str: string) => {
-    const cleanupResultString = str.replace(/[^-()\d/*+.]/g,'');
-    const result = new Function(`return ${cleanupResultString}`)();
+    const result = new Function(`return ${str}`)();
     return result.toString();
   };
 
